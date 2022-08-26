@@ -12,18 +12,96 @@ html {
 body {
     box-sizing: border-box;
     position: relative;
+    background-color: #161b22;
 }
 
 .invalid{
     display: none;
     margin-top: 3px;
-    margin-left: 24px;
     background-color: #ffeeee;
     color: #cc3333;
-    padding: 2px 3px;
+    padding: 3px 4px;
+    font-size: 12px;
     border: 1px solid #cc3333;
-    width: fit-content;
 }
-p.show{
-    display: block;
+.show{
+    display: block !important;
+}
+/* ///////////////////////////////////////////////////// */
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 3.4rem;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.buscarcep__container {
+    max-width: 550px;
+    margin: 20% auto 0;
+}
+@media only screen and (max-width:800px){
+    .buscarcep__container {
+        max-width: 100%;
+        margin: 30% auto 0;
+    }
+}
+@media only screen and (max-width:500px){
+    .buscarcep__container {
+        margin: 50% auto 0;
+    }
+}
+
+.buscarcep__consulta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+label {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-bottom: 8px;
+}
+
+#cep {
+    font-size: 16px;
+    padding: 2px 5px;
+}
+
+button{
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 3px;
+    font-weight: 500;
+    color: #161b22;
+    cursor: pointer;
+    transition: .3s all;
+}
+button:hover{
+    color: #161b22ab;
+    transition: .3s all;
+}
+
+.resposta {
+    background-color: #fff;
+    margin-top: 15px;
+    padding: 10px;
+    display: none;
+    border-radius: 5px;
+}
+
+.resposta p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #161b22;
+    font-family: sans-serif;
+}
+.resposta p:not(:last-child) {
+    margin-bottom: 5px;
 }

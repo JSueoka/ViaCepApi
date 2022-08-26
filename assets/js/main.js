@@ -1,18 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function(e){
-
-//     // setCepMask();
-
-    
-// })
-
-// // function setCepMask() {
-//     //     const cepInput = [
-//     //         document.querySelector('input[name="cep"]')
-//     //     ];
-//     //     for(input of cepInput)
-//     //     if (input.length > 0) input.mask("00000-000");
-//     // }
-
+// CONSULTANDO ENDEREÇO
 function buscarEndereco(){
 
     let cep = document.querySelector('#cep').value;
@@ -27,16 +13,26 @@ function buscarEndereco(){
         response.json().then(apresentaEndereco);
     })
 }
+
+// EXIBINDO DADOS ENCONTRADOS
 function apresentaEndereco(dados){
     let resposta = document.querySelector('.resposta');
 
     if(dados.erro){
+        document.querySelector('.invalid').classList.remove('show');
         resposta.innerHTML = "<p>Endereço não localizado!</p>";
     }
     else{
-        resposta.innerHTML =`<p>Endereço: ${dados.logradouro}</p>
-                            <p>Complemento: ${dados.complemento}</p>
-                            <p>Bairro:${dados.bairro}</p>
-                            <p>UF:${dados.uf}</p>`
+        document.querySelector('.resposta').classList.add('show');
+        document.querySelector('.invalid').classList.remove('show');
+        resposta.innerHTML =`<p><strong>CEP:</strong> ${dados.logradouro}</p>
+                            <p><strong>Complemento:</strong> ${dados.complemento}</p>
+                            <p><strong>Bairro:</strong> ${dados.bairro}</p>
+                            <p><strong>Localidade:</strong> ${dados.localidade}</p>
+                            <p><strong>UF:</strong> ${dados.uf}</p>
+                            <p><strong>Siafi:</strong> ${dados.siafi}</p>
+                            <p><strong>DDD:</strong> ${dados.ddd}</p>
+                            <p><strong>GIA:</strong> ${dados.gia}</p>
+                            <p><strong>IBGE:</strong> ${dados.ibge}</p>`
     }
 }
