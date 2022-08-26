@@ -13,3 +13,17 @@ body {
     box-sizing: border-box;
     position: relative;
 }
+
+.invalid{
+    display: none;
+    margin-top: 3px;
+    margin-left: 24px;
+    background-color: #ffeeee;
+    color: #cc3333;
+    padding: 2px 3px;
+    border: 1px solid #cc3333;
+    width: fit-content;
+}
+p.show{
+    display: block;
+}

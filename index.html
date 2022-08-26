@@ -11,14 +11,16 @@
 </head>
 <body>
 
-    <section class="news">
+    <section class="buscarcep">
 
-        <form action="">
-            <label for="cep">CEP:</label>
-            <input name="cep" type="text" id="cep" placeholder="00000000">
-            <button type="submit" onclick="buscarEndereco()" id="consultar">Consultar</button>
-        </form>
+        <label for="cep">CEP:</label>
+        <input name="cep" type="number" id="cep" placeholder="00000000">
+        <p class="invalid">CEP inválido!</p>
+        <button onclick="buscarEndereco()" id="consultar">Consultar</button>
 
+        <div class="resposta">
+            <p>Resultado da busca:</p>
+        </div>
     </section>
 
     <script src="assets/js/main.js"></script>
